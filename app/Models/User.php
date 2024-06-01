@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->morphOne(Address::class, 'addressable');
     }
+
+    public function genres()
+    {
+        return $this->hasMany(UserGenre::class);
+    }
+
+    public function history()
+    {
+        return $this->hasMany(UserHistory::class);
+    }
 }

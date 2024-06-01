@@ -20,6 +20,7 @@ class UserGenreSeeder extends Seeder
             ['user_id' => 2, 'name' => 'Pop'],
             ['user_id' => 2, 'name' => 'Rock'],
             ['user_id' => 3, 'name' => 'Indie'],
+            ['user_id' => 3, 'name' => 'Pop'],
         ]);
     }
 }

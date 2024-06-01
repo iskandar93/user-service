@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'passport_playlist' => [
+        'url' => env('PLAYLIST_PLATFORM_URL'),
+        'key' => env('ACCESS_TOKEN_TO_PLAYLIST_PLATFORM')
+    ],
+
 ];
