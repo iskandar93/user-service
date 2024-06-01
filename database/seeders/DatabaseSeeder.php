@@ -22,5 +22,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
         $this->call(StateSeeder::class);
+        $this->call(AddressSeeder::class);
+        $this->call(UserInterestSeeder::class);
+        $this->call(UserGenreSeeder::class);
+        $this->call(UserHistorySeeder::class);
     }
 }
