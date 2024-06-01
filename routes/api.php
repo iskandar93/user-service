@@ -12,5 +12,8 @@ use App\Http\Controllers\API\AuthenticateController;
 Route::post('login', [AuthenticateController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/user/{id}', [UserController::class, 'show']);
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/user/{id}', 'show');
+        Route::get('/user/recommend/playlist/{id}', 'recommendUser');
+    });
 });
