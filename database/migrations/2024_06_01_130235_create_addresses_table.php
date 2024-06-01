@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('postcode');
             $table->string('city')->nullable();
             $table->unsignedInteger('state_id')->nullable();
+            $table->timestamps();
 
             $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
         });
