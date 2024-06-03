@@ -15,5 +15,6 @@ Route::middleware('auth:api')->group(function () {
     Route::controller(UserController::class)->group(function () {
         Route::get('/user/{id}', 'show');
         Route::get('/user/recommend/playlist/{id}', 'recommendUser');
+        Route::get('/user/subscription/{id}', 'subscriptionUser');
     });
 });

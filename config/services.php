@@ -40,4 +40,9 @@ return [
         'key' => env('ACCESS_TOKEN_TO_PLAYLIST_PLATFORM')
     ],
 
+    'passport_subscription' => [
+        'url' => env('SUBSCRIPTION_PLATFORM_URL'),
+        'key' => env('ACCESS_TOKEN_TO_SUBSCRIPTION_PLATFORM')
+    ],
+
 ];

@@ -15,6 +15,8 @@ class UserController extends Controller
     {
         $this->playlistUrl = config('services.passport_playlist.url');
         $this->playlistKey = config('services.passport_playlist.key');
+        $this->subscriptionUrl = config('services.passport_subscription.url');
+        $this->subscriptionKey = config('services.passport_subscription.key');
     }
 
     public function show(string $id)
@@ -56,6 +58,30 @@ class UserController extends Controller
         return response()->json([
             'status' => 200,
             'data' => $recommend
+        ]);
+    }
+
+    public function getSubscription()
+    {
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer '. $this->subscriptionKey,
+        ])->get("{$this->subscriptionUrl}/api/subscription");
+
+        return $response->json();
+    }
+
+    public function subscriptionUser(string $id)
+    {
+        $user = User::findOrFail($id);
+
+        $subscribe = collect($this->getSubscription()['data']);
+
+        $user->subscribeInfo = $subscribe->whereIn('user_id', $id);
+
+        return response()->json([
+            'status' => 200,
+            'data' => $user
         ]);
     }
 }
