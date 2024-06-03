@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\V2;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,7 +34,7 @@ class UserController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Authorization' => 'Bearer '. $this->playlistKey,
-        ])->get("{$this->playlistUrl}/api/playlist");
+        ])->get("{$this->playlistUrl}/api/v2/playlist");
 
         return $response->json();
     }
@@ -66,7 +66,7 @@ class UserController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'Authorization' => 'Bearer '. $this->subscriptionKey,
-        ])->get("{$this->subscriptionUrl}/api/subscription");
+        ])->get("{$this->subscriptionUrl}/api/v2/subscription");
 
         return $response->json();
     }

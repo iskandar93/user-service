@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\V1\UserController;
-use App\Http\Controllers\API\V1\AuthenticateController;
+use App\Http\Controllers\API\V2\UserController;
+use App\Http\Controllers\API\V2\AuthenticateController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
